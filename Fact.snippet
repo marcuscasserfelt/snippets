@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippets">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Fact method</Title>
+            <Author>Marcus Casserfelt</Author>
+            <Description>Creates a base Fact test method</Description>
+            <Shortcut>fact</Shortcut>
+        </Header>
+        <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Xunit</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>Replace with the name of the test method</ToolTip>
+          <Default>MyTestMethod</Default>
+        </Literal>
+        <Literal Editable="false">
+            <ID>TestMethod</ID>
+            <Function>SimpleTypeName(Fact)</Function>
+        </Literal>
+        <Literal>
+          <ID>expected</ID>
+          <Default>ExpectedResult</Default>
+        </Literal>
+        <Literal>
+          <ID>actual</ID>
+          <Default>"ActualResult";</Default>
+          <ToolTip>Replace with the code you want to test</ToolTip>
+        </Literal>
+        <Literal>
+            <ID>assert</ID>
+            <Default>Assert.Equal(expected, actual);</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[  [$TestMethod$]
+        public void $name$()
+        {                
+            // arrange
+            var expected = "$expected$";
+
+            // act
+            var actual = $actual$
+
+            // assert
+            $assert$
+        }]]></Code>
+    </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
